@@ -8,7 +8,7 @@ class QuizBrain {
     Question('You can lead a cow down stairs but not up stairs.', false),
     Question('Approximately one quarter of human bones are in the feet.', true),
     Question('A slug\'s blood is green.', true),
-    Question('Buzz Aldrin\'s mother\'s maiden name was \"Moon\".', true),
+    Question('Buzz Aldrin\'s mother\'s maiden name was "Moon".', true),
     Question('It is illegal to pee in the Ocean in Portugal.', true),
     Question(
         'No piece of square dry paper can be folded in half more than 7 times.',
@@ -22,13 +22,14 @@ class QuizBrain {
     Question(
         'The total surface area of two human lungs is approximately 70 square metres.',
         true),
-    Question('Google was originally called \"Backrub\".', true),
+    Question('Google was originally called "Backrub".', true),
     Question(
         'Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.',
         true),
     Question(
         'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',
         true),
+    Question('', true),
   ];
 
   void nextQuestion() {
@@ -43,5 +44,17 @@ class QuizBrain {
 
   bool getQuestionAnswer(int questionNumber) {
     return _questionBank[questionNumber].questionAnswer;
+  }
+
+  bool isFinished() {
+    if (questionNumber >= _questionBank.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void reset() {
+    questionNumber = 0;
   }
 }
